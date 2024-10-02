@@ -1,12 +1,14 @@
 locals {
   name_suffix = "${var.landing_zone}-${var.environment}"
-
+  locationshortname = {
+    germanywestcentral = "gwc"
+  }
   tags = {
     "Environment" : var.environment
   }
 
-  platform_subid      = ""
-  private_dns_rg_name = "rg-dns-hub-connect-eus-001"
+  platform_subid      = "b45478e3-5ce4-4658-81f0-af100e88b478"
+  private_dns_rg_name = "rg-dns-hub-gwc-001"
   access_policies = {
     policy = {
       tenant_id               = data.azurerm_client_config.current.tenant_id
@@ -21,7 +23,7 @@ locals {
   }
 
   resource_ids = {
-    kv              = try(module.keyvaults["kv-vst-dev"].azure_key_vault_id, null)
+    kv              = try(module.keyvaults["kv"].azure_key_vault_id, null)
     storage_account = module.storage_account.storage_account_id
     app             = module.app_service.app_service.id
   }
@@ -52,7 +54,7 @@ locals {
   }
   vnet_peering_v1 = {
     peer-to-platform-conn = {
-      name = "vnet-hub-eus-oo1-${var.vnet_profile["vnet-eus"].name}"
+      name = "vnet-hub-gwc-oo1-${var.vnet_profile["vnet-eus"].name}"
       from = {
         id = data.azurerm_virtual_network.connectivity.id
       }
@@ -62,7 +64,7 @@ locals {
       settings = local.network_peering_settings_hub
     }
     peer-subvnet-to-platform-conn = {
-      name = "vnet-hub-eus-oo1-${var.vnet_profile["vnet-eus"].name}"
+      name = "vnet-hub-gwc-oo1-${var.vnet_profile["vnet-eus"].name}"
       from = {
         id = module.network["vnet-eus"].vnet_id
       }

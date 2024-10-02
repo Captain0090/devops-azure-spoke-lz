@@ -42,7 +42,7 @@ locals {
 
   network_peering_settings_hub = {
     allow_forwarded_traffic      = true
-    allow_gateway_transit        = true
+    allow_gateway_transit        = false
     allow_virtual_network_access = true
     use_remote_gateways          = false
   }
@@ -50,7 +50,7 @@ locals {
     allow_forwarded_traffic      = true
     allow_gateway_transit        = false
     allow_virtual_network_access = true
-    use_remote_gateways          = true
+    use_remote_gateways          = false
   }
   vnet_peering_v1 = {
     peer-to-platform-conn = {

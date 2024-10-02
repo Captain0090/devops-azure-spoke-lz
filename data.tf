@@ -9,8 +9,8 @@ data "azurerm_private_dns_zone" "dns_zone" {
 }
 
 data "azurerm_virtual_network" "connectivity" {
-  name                = "vnet-hub-connect-eastus-001"
-  resource_group_name = "rg-network-hub-connect-eastus-001"
+  name                = "vnet-hub-gwc-001"
+  resource_group_name = "rg-network-hub-gwc-001"
   provider            = azurerm.platformconnectivity
 }
 

@@ -25,9 +25,10 @@ module "app_service" {
 
   app_service_settings = {
     STORAGE_CONNECTION_STRING = module.storage_account.storage_primary_connection_string
-    MYSQL_SERVER_PASSWORD     = module.mysql.mysql-administrator-password
-    MYSQL_SERVER_HOSTNAME     = module.mysql.mysql-fqdn
-    MYSQL_SERVER_USERNAME     = module.mysql.mysql-administrator-login
+    MYSQL_SERVER_PASSWORD     = module.mysql.mysql_administrator_password
+    MYSQL_SERVER_HOSTNAME     = module.mysql.mysql_fqdn
+    MYSQL_SERVER_USERNAME     = module.mysql.mysql_administrator_login
+    APPINSIGHTS_INSTRUMENTATIONKEY = module.app_insights.instrumentation_key
   }
 
   log_analytics_destination_type = "AzureDiagnostics"

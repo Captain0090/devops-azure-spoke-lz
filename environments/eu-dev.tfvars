@@ -42,7 +42,7 @@ vnet_profile = {
         name                                          = "snet-mysql-cityagenda-dev-gwc-001"
         private_link_service_network_policies_enabled = false
         private_endpoint_network_policies_enabled     = false
-        address_prefixes                              = ["10.68.26.0/28"]
+        address_prefixes                              = ["10.68.26.32/28"]
         delegation = {
           name = "delegation"
           service_delegation = {
@@ -56,19 +56,10 @@ vnet_profile = {
         name                                          = "snet-app-cityagenda-dev-gwc-001"
         private_link_service_network_policies_enabled = false
         private_endpoint_network_policies_enabled     = true
-        address_prefixes                              = ["10.68.26.96/28"]
+        address_prefixes                              = ["10.68.26.48/28"]
         nsg_name                                      = "nsg-filestore-cityagenda-dev-gwc-001"
         nsg_rules                                     = []
-      },
-      support_vm = {
-        name                                          = "snet-supportvm-cityagenda-dev-gwc-001"
-        private_link_service_network_policies_enabled = true
-        private_endpoint_network_policies_enabled     = true
-        address_prefixes                              = ["10.68.26.80/29"]
-        nsg_name                                      = "nsg-supportvm-cityagenda-dev-gwc-001"
-        service_endpoints                             = ["Microsoft.Storage", "Microsoft.KeyVault", "Microsoft.Web"]
-        nsg_rules                                     = []
-      },
+      }
     }
   }
 }

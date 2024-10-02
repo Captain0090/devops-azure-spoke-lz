@@ -61,7 +61,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: onearc-main/terraform
+        working-directory: ./
     env:
       ARM_USE_OIDC: true
       ARM_CLIENT_ID: "${{ secrets.ARM_CLIENT_ID }}"

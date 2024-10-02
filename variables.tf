@@ -159,7 +159,7 @@ variable "mysql" {
       io_scaling_enabled = optional(bool, false)
       iops               = optional(number, 360)
       size_gb            = optional(number, 20)
-    }))
+    }),{})
   }))
   description = "Details of Mysql database."
 }

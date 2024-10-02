@@ -8,7 +8,7 @@ terraform {
       source = "Azure/azapi"
     }
   }
-  #backend "azurerm" {}
+  backend "azurerm" {}
 }
 
 provider "azurerm" {

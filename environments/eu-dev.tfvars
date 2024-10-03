@@ -134,5 +134,6 @@ mysql = {
     vnet_key        = "vnet-eus"
     snet_key        = "mysql"
     nysql_databases = []
+    mysql_zone      = "2"
   }
 }

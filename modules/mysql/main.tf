@@ -11,7 +11,7 @@ resource "azurerm_mysql_flexible_server" "default" {
   sku_name                     = var.sku_name
   version                      = var.mysql_version
   create_mode                  = var.create_mode
-
+  zone                         = var.mysql_zone
   high_availability {
     mode = var.high_availability_mode
   }

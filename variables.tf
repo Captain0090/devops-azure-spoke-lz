@@ -154,12 +154,13 @@ variable "mysql" {
     vnet_key            = optional(string, null)
     snet_key            = optional(string, null)
     nysql_databases     = optional(list(string))
+    mysql_zone          = optional(string)
     storage = optional(object({
       auto_grow_enabled  = optional(bool, true)
       io_scaling_enabled = optional(bool, false)
       iops               = optional(number, 360)
       size_gb            = optional(number, 20)
-    }),{})
+    }), {})
   }))
   description = "Details of Mysql database."
 }

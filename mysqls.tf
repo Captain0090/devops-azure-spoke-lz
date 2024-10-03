@@ -10,7 +10,8 @@ module "mysql" {
   private_dns_zone_id    = data.azurerm_private_dns_zone.dns_zone["mysql"].id
   tags                   = local.tags
   nysql_databases        = each.value.nysql_databases
-  storage = each.value.storage
+  storage                = each.value.storage
+  mysql_zone             = each.value.mysql_zone
 }
 
 

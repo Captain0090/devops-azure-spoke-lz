@@ -24,10 +24,10 @@ module "app_service" {
   allowed_origins = var.app_service.allowed_origins
 
   app_service_settings = {
-    STORAGE_CONNECTION_STRING = module.storage_account.storage_primary_connection_string
-    MYSQL_SERVER_PASSWORD     = module.mysql["mysqlserver"].mysql-administrator-password
-    MYSQL_SERVER_HOSTNAME     = module.mysql["mysqlserver"].mysql-fqdn
-    MYSQL_SERVER_USERNAME     = module.mysql["mysqlserver"].mysql-administrator-login
+    STORAGE_CONNECTION_STRING      = module.storage_account.storage_primary_connection_string
+    MYSQL_SERVER_PASSWORD          = module.mysql["mysqlserver"].mysql-administrator-password
+    MYSQL_SERVER_HOSTNAME          = module.mysql["mysqlserver"].mysql-fqdn
+    MYSQL_SERVER_USERNAME          = module.mysql["mysqlserver"].mysql-administrator-login
     APPINSIGHTS_INSTRUMENTATIONKEY = module.app_insights.instrumentation_key
   }
 

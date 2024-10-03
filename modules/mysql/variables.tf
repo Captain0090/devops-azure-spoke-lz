@@ -18,6 +18,12 @@ variable "administrator_login" {
   description = "(Optional) The Administrator login for the MySQL Flexible Server. Required when create_mode is Default. Changing this forces a new MySQL Flexible Server to be created."
 }
 
+variable "mysql_zone" {
+  type        = string
+  description = "(Optional) Specifies the Availability Zone in which this MySQL Flexible Server should be located. Possible values are 1, 2 and 3."
+  default     = null
+}
+
 variable "administrator_password" {
   type        = string
   description = "(Optional) The Password associated with the administrator_login for the MySQL Flexible Server. Required when create_mode is Default."

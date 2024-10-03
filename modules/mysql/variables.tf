@@ -21,6 +21,7 @@ variable "administrator_login" {
 variable "mysql_zone" {
   type        = string
   description = "(Optional) Specifies the Availability Zone in which this MySQL Flexible Server should be located. Possible values are 1, 2 and 3."
+  default     = null
 }
 
 variable "administrator_password" {

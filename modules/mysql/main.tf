@@ -29,6 +29,9 @@ resource "azurerm_mysql_flexible_server" "default" {
     }
   }
   tags = var.tags
+  lifecycle {
+    ignore_changes = [high_availability.0.standby_availability_zone]
+  }
 }
 
 # Manages the MySQL Flexible Server Database

@@ -11,6 +11,7 @@ module "mysql" {
   tags                   = local.tags
   nysql_databases        = each.value.nysql_databases
   storage = each.value.storage
+  mysql_zone            = each.value.mysql_zone
 }
 
 

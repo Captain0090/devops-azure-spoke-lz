@@ -29,6 +29,8 @@ module "app_service" {
     MYSQL_SERVER_HOSTNAME          = module.mysql["mysqlserver"].mysql-fqdn
     MYSQL_SERVER_USERNAME          = module.mysql["mysqlserver"].mysql-administrator-login
     APPINSIGHTS_INSTRUMENTATIONKEY = module.app_insights.instrumentation_key
+    REDIS_END_POINT                = "rediss://${azurerm_redis_cache.this.hostname}:6380"
+    REDIS_PASSWORD                 = azurerm_redis_cache.this.primary_access_key
   }
 
   log_analytics_destination_type = "AzureDiagnostics"

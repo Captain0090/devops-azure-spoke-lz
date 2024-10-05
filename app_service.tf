@@ -11,7 +11,7 @@ module "app_service" {
   settings = {
     site_config = {
       application_stack = {
-        php_version = "8.1"
+        php_version = "8.3"
       }
     }
   }

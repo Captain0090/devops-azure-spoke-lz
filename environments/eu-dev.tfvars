@@ -137,3 +137,10 @@ mysql = {
     mysql_zone      = "2"
   }
 }
+redis_server_settings = {
+  name     = "redis-cityagenda-dev-gwc-001"
+  sku_name = "Standard"
+  capacity = 0
+  enable_non_ssl_port = false
+  rg_key              = "default-eus"
+}

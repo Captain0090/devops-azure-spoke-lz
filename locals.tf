@@ -26,6 +26,7 @@ locals {
     kv              = try(module.keyvaults["kv"].azure_key_vault_id, null)
     storage_account = module.storage_account.storage_account_id
     app             = module.app_service.app_service.id
+    redis           = azurerm_redis_cache.this.id
   }
 
   auth_settings = {
@@ -38,6 +39,7 @@ locals {
     key_vault = "privatelink.vaultcore.azure.net"
     blob      = "privatelink.blob.core.windows.net"
     mysql     = "privatelink.mysql.database.azure.com"
+    redis     = "privatelink.redis.cache.windows.net"
   }
 
   network_peering_settings_hub = {

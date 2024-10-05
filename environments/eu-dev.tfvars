@@ -99,6 +99,16 @@ private_endpoint = {
     is_manual_connection = false
     subresource_names    = ["sites"]
   }
+ pe_redis = {
+    name                 = "pe-redis-cityagenda-dev-gwc-001"
+    rg_key               = "default-eus"
+    vnet_key             = "vnet-eus"
+    snet_key             = "redis"
+    dns_key              = "redis_dns"
+    resource             = "redis"
+    is_manual_connection = false
+    subresource_names    = ["redisCache"]
+  }
 }
 
 #webapp

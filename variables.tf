@@ -164,3 +164,20 @@ variable "mysql" {
   }))
   description = "Details of Mysql database."
 }
+variable "redis_server_settings" {
+  type = object({
+    name                          = optional(string)
+    capacity                      = optional(number, 0)
+    sku_name                      = optional(string, "Standard")
+    enable_non_ssl_port           = optional(bool, false)
+    minimum_tls_version           = optional(string)
+    private_static_ip_address     = optional(string)
+    public_network_access_enabled = optional(string)
+    replicas_per_master           = optional(number)
+    shard_count                   = optional(number)
+    zones                         = optional(list(string))
+    rg_key                        = optional(string)
+  })
+  description = "optional redis server setttings for both Premium and Standard/Basic SKU"
+  default     = {}
+}

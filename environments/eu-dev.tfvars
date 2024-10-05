@@ -99,6 +99,16 @@ private_endpoint = {
     is_manual_connection = false
     subresource_names    = ["sites"]
   }
+ pe_redis = {
+    name                 = "pe-redis-cityagenda-dev-gwc-001"
+    rg_key               = "default-eus"
+    vnet_key             = "vnet-eus"
+    snet_key             = "snet_pe"
+    dns_key              = "redis"
+    resource             = "redis"
+    is_manual_connection = false
+    subresource_names    = ["redisCache"]
+  }
 }
 
 #webapp
@@ -136,4 +146,11 @@ mysql = {
     nysql_databases = []
     mysql_zone      = "2"
   }
+}
+redis_server_settings = {
+  name     = "redis-cityagenda-dev-gwc-001"
+  sku_name = "Standard"
+  capacity = 0
+  enable_non_ssl_port = false
+  rg_key              = "default-eus"
 }
